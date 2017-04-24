@@ -11,6 +11,8 @@
 @interface albumCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *albumImageView;
 @property (weak, nonatomic) IBOutlet UILabel *albumTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *photoCountLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *albumTitleLabelWidthConstraint;
 
 @end
 
@@ -31,7 +33,16 @@
                                             makeResizeMode:PHImageRequestOptionsResizeModeNone completion:^(UIImage *AssetImage) {
                                                 self.albumImageView.image = AssetImage;
                                             }];
+    NSDictionary *attributes = @{NSFontAttributeName:self.albumTitleLabel.font};
+    NSInteger options = NSStringDrawingUsesFontLeading |
+    NSStringDrawingTruncatesLastVisibleLine |
+    NSStringDrawingUsesLineFragmentOrigin;
+    CGRect stringRect = [list.title boundingRectWithSize:CGSizeMake(MAXFLOAT, self.albumTitleLabel.font.lineHeight)
+                                                 options:options attributes:attributes context:NULL];
+    CGFloat width = ceil(stringRect.size.width);
+    self.albumTitleLabelWidthConstraint.constant = width < 100?width:100;
     self.albumTitleLabel.text = list.title;
+    self.photoCountLabel.text = [NSString stringWithFormat:@"(%ld)",list.photoNum];
 }
 
 - (void)awakeFromNib {

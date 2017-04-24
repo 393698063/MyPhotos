@@ -16,12 +16,16 @@
 		750BB8231E95CEF80083A2FA /* Photo__Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB8221E95CEF80083A2FA /* Photo__Tests.m */; };
 		750BB82E1E95CEF80083A2FA /* Photo__UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB82D1E95CEF80083A2FA /* Photo__UITests.m */; };
 		750BB83D1E95D1B30083A2FA /* QGPhotoMananger.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB83C1E95D1B30083A2FA /* QGPhotoMananger.m */; };
-		750BB8401E9722BA0083A2FA /* SmartAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB83F1E9722BA0083A2FA /* SmartAlbumViewController.m */; };
-		750BB8431E9722D50083A2FA /* smallPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB8421E9722D50083A2FA /* smallPhotoViewController.m */; };
+		750BB8401E9722BA0083A2FA /* QGSmartAlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB83F1E9722BA0083A2FA /* QGSmartAlbumViewController.m */; };
+		750BB8431E9722D50083A2FA /* QGSmallPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB8421E9722D50083A2FA /* QGSmallPhotoViewController.m */; };
 		750BB8471E973C5C0083A2FA /* albumCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB8451E973C5C0083A2FA /* albumCell.m */; };
 		750BB8481E973C5C0083A2FA /* albumCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750BB8461E973C5C0083A2FA /* albumCell.xib */; };
 		750BB84C1E9760380083A2FA /* photoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 750BB84A1E9760380083A2FA /* photoCell.m */; };
 		750BB84D1E9760380083A2FA /* photoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750BB84B1E9760380083A2FA /* photoCell.xib */; };
+		7583ECAA1EA5E02F00E33119 /* QGbigPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7583ECA91EA5E02F00E33119 /* QGbigPhotoViewController.m */; };
+		7583ECAD1EA614F500E33119 /* QGBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7583ECAC1EA614F500E33119 /* QGBaseViewController.m */; };
+		7583ECB01EA61B4300E33119 /* QGBaseNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7583ECAF1EA61B4300E33119 /* QGBaseNavigationViewController.m */; };
+		7583ECB31EA6FC7A00E33119 /* QGCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7583ECB21EA6FC7A00E33119 /* QGCropViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,16 +64,24 @@
 		750BB82F1E95CEF80083A2FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		750BB83B1E95D1B30083A2FA /* QGPhotoMananger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGPhotoMananger.h; sourceTree = "<group>"; };
 		750BB83C1E95D1B30083A2FA /* QGPhotoMananger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGPhotoMananger.m; sourceTree = "<group>"; };
-		750BB83E1E9722BA0083A2FA /* SmartAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SmartAlbumViewController.h; sourceTree = "<group>"; };
-		750BB83F1E9722BA0083A2FA /* SmartAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SmartAlbumViewController.m; sourceTree = "<group>"; };
-		750BB8411E9722D50083A2FA /* smallPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = smallPhotoViewController.h; sourceTree = "<group>"; };
-		750BB8421E9722D50083A2FA /* smallPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = smallPhotoViewController.m; sourceTree = "<group>"; };
+		750BB83E1E9722BA0083A2FA /* QGSmartAlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGSmartAlbumViewController.h; sourceTree = "<group>"; };
+		750BB83F1E9722BA0083A2FA /* QGSmartAlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGSmartAlbumViewController.m; sourceTree = "<group>"; };
+		750BB8411E9722D50083A2FA /* QGSmallPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGSmallPhotoViewController.h; sourceTree = "<group>"; };
+		750BB8421E9722D50083A2FA /* QGSmallPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGSmallPhotoViewController.m; sourceTree = "<group>"; };
 		750BB8441E973C5C0083A2FA /* albumCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = albumCell.h; sourceTree = "<group>"; };
 		750BB8451E973C5C0083A2FA /* albumCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = albumCell.m; sourceTree = "<group>"; };
 		750BB8461E973C5C0083A2FA /* albumCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = albumCell.xib; sourceTree = "<group>"; };
 		750BB8491E9760380083A2FA /* photoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = photoCell.h; sourceTree = "<group>"; };
 		750BB84A1E9760380083A2FA /* photoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = photoCell.m; sourceTree = "<group>"; };
 		750BB84B1E9760380083A2FA /* photoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = photoCell.xib; sourceTree = "<group>"; };
+		7583ECA81EA5E02F00E33119 /* QGbigPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGbigPhotoViewController.h; sourceTree = "<group>"; };
+		7583ECA91EA5E02F00E33119 /* QGbigPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGbigPhotoViewController.m; sourceTree = "<group>"; };
+		7583ECAB1EA614F500E33119 /* QGBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGBaseViewController.h; sourceTree = "<group>"; };
+		7583ECAC1EA614F500E33119 /* QGBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGBaseViewController.m; sourceTree = "<group>"; };
+		7583ECAE1EA61B4300E33119 /* QGBaseNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGBaseNavigationViewController.h; sourceTree = "<group>"; };
+		7583ECAF1EA61B4300E33119 /* QGBaseNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGBaseNavigationViewController.m; sourceTree = "<group>"; };
+		7583ECB11EA6FC7A00E33119 /* QGCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QGCropViewController.h; sourceTree = "<group>"; };
+		7583ECB21EA6FC7A00E33119 /* QGCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QGCropViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,18 +136,26 @@
 				750BB80C1E95CEF80083A2FA /* AppDelegate.m */,
 				750BB80E1E95CEF80083A2FA /* ViewController.h */,
 				750BB80F1E95CEF80083A2FA /* ViewController.m */,
-				750BB83E1E9722BA0083A2FA /* SmartAlbumViewController.h */,
-				750BB83F1E9722BA0083A2FA /* SmartAlbumViewController.m */,
+				7583ECAB1EA614F500E33119 /* QGBaseViewController.h */,
+				7583ECAC1EA614F500E33119 /* QGBaseViewController.m */,
+				7583ECAE1EA61B4300E33119 /* QGBaseNavigationViewController.h */,
+				7583ECAF1EA61B4300E33119 /* QGBaseNavigationViewController.m */,
+				750BB83E1E9722BA0083A2FA /* QGSmartAlbumViewController.h */,
+				750BB83F1E9722BA0083A2FA /* QGSmartAlbumViewController.m */,
 				750BB8441E973C5C0083A2FA /* albumCell.h */,
 				750BB8451E973C5C0083A2FA /* albumCell.m */,
 				750BB8461E973C5C0083A2FA /* albumCell.xib */,
-				750BB8411E9722D50083A2FA /* smallPhotoViewController.h */,
-				750BB8421E9722D50083A2FA /* smallPhotoViewController.m */,
+				750BB8411E9722D50083A2FA /* QGSmallPhotoViewController.h */,
+				750BB8421E9722D50083A2FA /* QGSmallPhotoViewController.m */,
+				7583ECA81EA5E02F00E33119 /* QGbigPhotoViewController.h */,
+				7583ECA91EA5E02F00E33119 /* QGbigPhotoViewController.m */,
 				750BB8491E9760380083A2FA /* photoCell.h */,
 				750BB84A1E9760380083A2FA /* photoCell.m */,
 				750BB84B1E9760380083A2FA /* photoCell.xib */,
 				750BB83B1E95D1B30083A2FA /* QGPhotoMananger.h */,
 				750BB83C1E95D1B30083A2FA /* QGPhotoMananger.m */,
+				7583ECB11EA6FC7A00E33119 /* QGCropViewController.h */,
+				7583ECB21EA6FC7A00E33119 /* QGCropViewController.m */,
 				750BB8111E95CEF80083A2FA /* Main.storyboard */,
 				750BB8141E95CEF80083A2FA /* Assets.xcassets */,
 				750BB8161E95CEF80083A2FA /* LaunchScreen.storyboard */,
@@ -311,11 +331,15 @@
 			files = (
 				750BB84C1E9760380083A2FA /* photoCell.m in Sources */,
 				750BB8101E95CEF80083A2FA /* ViewController.m in Sources */,
-				750BB8401E9722BA0083A2FA /* SmartAlbumViewController.m in Sources */,
+				750BB8401E9722BA0083A2FA /* QGSmartAlbumViewController.m in Sources */,
 				750BB80D1E95CEF80083A2FA /* AppDelegate.m in Sources */,
 				750BB80A1E95CEF80083A2FA /* main.m in Sources */,
+				7583ECAD1EA614F500E33119 /* QGBaseViewController.m in Sources */,
+				7583ECAA1EA5E02F00E33119 /* QGbigPhotoViewController.m in Sources */,
 				750BB83D1E95D1B30083A2FA /* QGPhotoMananger.m in Sources */,
-				750BB8431E9722D50083A2FA /* smallPhotoViewController.m in Sources */,
+				7583ECB31EA6FC7A00E33119 /* QGCropViewController.m in Sources */,
+				7583ECB01EA61B4300E33119 /* QGBaseNavigationViewController.m in Sources */,
+				750BB8431E9722D50083A2FA /* QGSmallPhotoViewController.m in Sources */,
 				750BB8471E973C5C0083A2FA /* albumCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,6 +578,7 @@
 				750BB8341E95CEF80083A2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		750BB8351E95CEF80083A2FA /* Build configuration list for PBXNativeTarget "Photo框架Tests" */ = {
 			isa = XCConfigurationList;
@@ -562,6 +587,7 @@
 				750BB8371E95CEF80083A2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		750BB8381E95CEF80083A2FA /* Build configuration list for PBXNativeTarget "Photo框架UITests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +596,7 @@
 				750BB83A1E95CEF80083A2FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

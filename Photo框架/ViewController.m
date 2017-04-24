@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "QGPhotoMananger.h"
-#import "SmartAlbumViewController.h"
+#import "QGSmartAlbumViewController.h"
+#import "QGBaseNavigationViewController.h"
 
 @interface ViewController ()
 
@@ -23,28 +24,30 @@
 
 - (IBAction)addphoto:(id)sender {
     
-    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@""
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:nil
                                                                                message:nil
                                                                         preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"" style:UIAlertActionStyleCancel
+    UIAlertAction * cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel
                                                     handler:nil];
     UIAlertAction * photo = [UIAlertAction actionWithTitle:@"照片" style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * _Nonnull action)
     {
-        SmartAlbumViewController * albumViewController = [[SmartAlbumViewController alloc] init];
-        albumViewController.dataAry = [[QGPhotoMananger defaultPhotoManager] getAllPhotoList];
-        [self.navigationController pushViewController:albumViewController animated:YES];
+        [QGSmartAlbumViewController enterSmartAlbumWithAlbums:[[QGPhotoMananger defaultPhotoManager] getAllPhotoList]
+                                               viewController:self
+                                           selectImageHandler:^(NSArray *imagesAry) {
+                                               
+                                           } selectDataHandler:^(NSArray *dataAry) {
+                                               
+                                           }];
     }];
     
-    __weak typeof(self)weakSelf = self;
     UIAlertAction * camero = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault
                                                     handler:^(UIAlertAction * _Nonnull action)
                               {
-                                  [[QGPhotoMananger defaultPhotoManager] takePhotoWithViewController:weakSelf compeletion:^(QGPhotoModel *model) {
-                                      SmartAlbumViewController * albumViewController = [[SmartAlbumViewController alloc] init];
-                                      albumViewController.dataAry = [[QGPhotoMananger defaultPhotoManager] getAllPhotoList];
-                                      [weakSelf.navigationController pushViewController:albumViewController animated:YES];
-                                  }];
+                                  [[QGPhotoMananger defaultPhotoManager] takePhotoWithViewController:self
+                              compeletion:^(QGPhotoModel *model) {
+                                  
+                              }];
                               }];
     
     [alertController addAction:photo];

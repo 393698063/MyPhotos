@@ -218,6 +218,18 @@ static QGPhotoMananger * manager = nil;
          makeResizeMode:(PHImageRequestOptionsResizeMode)resizeMode
              completion:(void (^)(UIImage *))completion
 {
+    [self getImageByAsset:asset
+                 makeSize:size
+           makeResizeMode:resizeMode
+             deliveryMode:PHImageRequestOptionsDeliveryModeHighQualityFormat
+               completion:completion];
+}
+
+- (void)getImageByAsset:(PHAsset *)asset makeSize:(CGSize)size
+         makeResizeMode:(PHImageRequestOptionsResizeMode)resizeMode
+           deliveryMode:(PHImageRequestOptionsDeliveryMode)deliveryMode
+             completion:(void (^)(UIImage *))completion
+{
     if (![self judgeIsHavePhotoAblumAuthority])
     {
         NSLog(@"no access");
@@ -230,12 +242,14 @@ static QGPhotoMananger * manager = nil;
      这个属性只有在 synchronous 为 true 时有效。
      */
     option.resizeMode = resizeMode;//控制照片尺寸
-    //option.deliveryMode = PHImageRequestOptionsDeliveryModeOpportunistic;//控制照片质量
+        option.deliveryMode = deliveryMode;//控制照片质量
     //option.synchronous = YES;
-    option.networkAccessAllowed = YES;
+    //    option.networkAccessAllowed = YES;
     //param：targetSize 即你想要的图片尺寸，若想要原尺寸则可输入PHImageManagerMaximumSize
     [[PHCachingImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFit options:option resultHandler:^(UIImage * _Nullable image, NSDictionary * _Nullable info) {
-        completion(image);
+        if (completion) {
+            completion(image);
+        }
     }];
 }
 
@@ -262,6 +276,18 @@ static QGPhotoMananger * manager = nil;
         [assets addObject:asset];
     }];
     
+    return assets;
+}
+
+#pragma mark -- 获取指定照片
+- (NSArray<PHAsset *> *)getAssetWithLocalIdentifiers:(NSArray<NSString *> *)LocalIdentifiers
+{
+    NSMutableArray * assets = [NSMutableArray arrayWithCapacity:1];
+    PHFetchResult * result = [PHAsset fetchAssetsWithLocalIdentifiers:LocalIdentifiers options:nil];
+    [result enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        PHAsset * asset = (PHAsset *)obj;
+        [assets addObject:asset];
+    }];
     return assets;
 }
 
@@ -292,7 +318,7 @@ static QGPhotoMananger * manager = nil;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
         UIImagePickerController * picker = [[UIImagePickerController alloc]init];
         picker.delegate = self;
-        picker.allowsEditing = NO;
+        picker.allowsEditing = YES;
         picker.sourceType = sourceType;
         [viewController presentViewController:picker animated:YES completion:nil];
     }else{
@@ -316,7 +342,8 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
 /**
  *  写入相册后的方法
  */
-- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo{
+- (void)image: (UIImage *) image didFinishSavingWithError: (NSError *) error
+  contextInfo: (void *) contextInfo{
     if (!error) {
         PHAsset * asset = [[[QGPhotoMananger defaultPhotoManager] getAllAssetInPhotoAblumWithAscending:YES] lastObject];
         QGPhotoModel * model = [[QGPhotoModel alloc]init];
@@ -343,6 +370,11 @@ didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
 
 @end
 
+@implementation QGPhotoSelectList
+
+
+
+@end
 
 
 

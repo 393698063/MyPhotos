@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QGPhotoMananger.h"
 
 @interface photoCell : UICollectionViewCell
 
-+ (id)photoCellWithCollectionView:(UICollectionView *)collectionView;
-- (void)setImage:(UIImage *)image;
+- (void)setPhoto:(QGPhotoSelectList *)list selectHandler:(void(^)(BOOL selectState))selectHandler;
 @end
